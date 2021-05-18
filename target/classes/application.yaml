@@ -1,8 +1,8 @@
 spring:
   datasource:
-    username: osdb
-    password: osdb
-    url: jdbc:mysql://localhost:3306/osdb?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: dbcr
+    password: dbcr
+    url: jdbc:mysql://localhost:3306/dbcr?createDatabaseIfNotExist=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     open-in-view: false

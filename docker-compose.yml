@@ -1,17 +1,17 @@
 version: '3'
 services:
   db:
-    container_name: lp-db
+    container_name: DBCR
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: 'landing_page'
-      MYSQL_USER: 'lpdb'
-      MYSQL_PASSWORD: 'lpdb'
-      MYSQL_ROOT_PASSWORD: 'lpdb'
+      MYSQL_DATABASE: 'dbcr'
+      MYSQL_USER: 'dbcr'
+      MYSQL_PASSWORD: 'dbcr'
+      MYSQL_ROOT_PASSWORD: 'dbcr'
     ports:
       - "3306:3306"
     volumes:
-      - ./others/volumes/mysql:/var/lib/mysql
+      - ./docker/volumes/mysql:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysql" ,"-h", "mysql", "-P", "3306", "-u", "root", "-e", "SELECT 1", "cache"]
       interval: 20ss

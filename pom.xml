@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>br.com.landingpage</groupId>
-    <artifactId>engine-api</artifactId>
+    <groupId>br.com.api</groupId>
+    <artifactId>dbcr-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>engine-api</name>
-    <description>Landing Page Engine API</description>
+    <name>dbcr-api</name>
+    <description>DBCR Engine API</description>
 
     <properties>
         <java.version>11</java.version>
