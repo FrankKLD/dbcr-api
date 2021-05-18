@@ -1,0 +1,46 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Frank-Matos" id="OS_SERVICE-2021-02-06-create-table">
+
+        <createTable tableName="SO_SERVICE" remarks="Table to save the SERVICE and ORDER_SERVICE.">
+
+            <column name="ID_SERVICE" type="INTEGER" remarks="Service SERVICE ID.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="ID_ORDER_SERVICE" type="INTEGER" remarks="Service ORDER SERVICE ID.">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseColumnNames="ID_SERVICE"
+                baseTableName="SO_SERVICE"
+                constraintName="FK_SO_SERVICE_TO_SERVICE_ORDER"
+                deferrable="false"
+                initiallyDeferred="false"
+                onDelete="RESTRICT"
+                onUpdate="RESTRICT"
+                referencedColumnNames="ID_SERVICE_ORDER"
+                referencedTableName="SERVICE_ORDER"
+                validate="true"/>
+
+        <addForeignKeyConstraint
+                baseColumnNames="ID_ORDER_SERVICE"
+                baseTableName="SO_SERVICE"
+                constraintName="FK_SO_SERVICE_TO_SERVICE"
+                deferrable="false"
+                initiallyDeferred="false"
+                onDelete="RESTRICT"
+                onUpdate="RESTRICT"
+                referencedColumnNames="ID_SERVICE"
+                referencedTableName="SERVICE"
+                validate="true"/>
+
+    </changeSet>
+</databaseChangeLog>

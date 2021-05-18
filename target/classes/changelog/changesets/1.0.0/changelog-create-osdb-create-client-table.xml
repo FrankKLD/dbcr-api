@@ -1,0 +1,30 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Frank-Matos" id="CLIENT-2021-02-06-create-table">
+
+        <createTable tableName="CLIENT" remarks="Table to save the CLIENT.">
+
+            <column name="ID_CLIENT" type="INTEGER" autoIncrement="true" remarks="Service CLIENT ID.">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ID_CLIENT"/>
+            </column>
+
+            <column name="CLIENT_NAME" type="VARCHAR(255 ${char})" remarks="Client Name.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="COMPANY" type="VARCHAR(255 ${char})" remarks="Company.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="PHONE" type="VARCHAR(128 ${char})" remarks="Phone.">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>

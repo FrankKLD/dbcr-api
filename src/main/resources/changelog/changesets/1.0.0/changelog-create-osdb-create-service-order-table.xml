@@ -1,0 +1,79 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Frank-Matos" id="SERVICE-ORDER-2021-02-06-create-table">
+
+        <createTable tableName="SERVICE_ORDER" remarks="Table to save the SERVICE ORDERS.">
+
+            <column name="ID_SERVICE_ORDER" type="INTEGER" autoIncrement="true" remarks="Service Order Id.">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ID_SERVICE_ORDER"/>
+            </column>
+
+            <column name="DATE_SERVICE_ORDER" type="DATETIME(6)" remarks="Server Id.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="DEFECT" type="VARCHAR(255 ${char})" remarks="Defect.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="EQUIPMENT" type="VARCHAR(128 ${char})" remarks="Equipment.">
+                <constraints nullable="false"/>
+            </column>
+
+
+            <column name="ID_CLIENT" type="INTEGER" remarks="FK CLIENT.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="ID_ASSISTANT" type="INTEGER" remarks="FK ASSISTANT.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="ID_FINALIZATION" type="INTEGER" remarks="FK FINALIZATION.">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseColumnNames="ID_CLIENT"
+                baseTableName="SERVICE_ORDER"
+                constraintName="FK_SERVICE_ORDER_TO_CLIENT"
+                deferrable="false"
+                initiallyDeferred="false"
+                onDelete="RESTRICT"
+                onUpdate="RESTRICT"
+                referencedColumnNames="ID_CLIENT"
+                referencedTableName="CLIENT"
+                validate="true"/>
+
+        <addForeignKeyConstraint
+                baseColumnNames="ID_ASSISTANT"
+                baseTableName="SERVICE_ORDER"
+                constraintName="FK_SERVICE_ORDER_TO_ASSISTANT"
+                deferrable="false"
+                initiallyDeferred="false"
+                onDelete="RESTRICT"
+                onUpdate="RESTRICT"
+                referencedColumnNames="ID_ASSISTANT"
+                referencedTableName="ASSISTANT"
+                validate="true"/>
+
+        <addForeignKeyConstraint
+                baseColumnNames="ID_FINALIZATION"
+                baseTableName="SERVICE_ORDER"
+                constraintName="FK_SERVICE_ORDER_TO_FINALIZATION"
+                deferrable="false"
+                initiallyDeferred="false"
+                onDelete="RESTRICT"
+                onUpdate="RESTRICT"
+                referencedColumnNames="ID_FINALIZATION"
+                referencedTableName="FINALIZATION"
+                validate="true"/>
+
+    </changeSet>
+</databaseChangeLog>

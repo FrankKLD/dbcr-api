@@ -1,0 +1,15 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="changelog-create-osdb-create-user-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-osdb-create-client-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-osdb-create-assistant-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-osdb-create-finalization-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-osdb-create-service-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-osdb-create-service-order-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog-create-osdb-create-so-service-table.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

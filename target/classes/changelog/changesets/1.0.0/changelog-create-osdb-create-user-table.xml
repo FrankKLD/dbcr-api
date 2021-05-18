@@ -1,0 +1,42 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Frank-Matos" id="USER-2021-02-05-create-table">
+
+        <createTable tableName="USER" remarks="Table to save the landings.">
+
+            <column name="ID_USER" type="integer" autoIncrement="true" remarks="Table Id.">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_ID_USER"/>
+            </column>
+
+            <column name="VC_ID_SERVER" type="integer" remarks="Server Id.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="VC_EMAIL" type="VARCHAR(255 ${char})" remarks="Email.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="VC_NAME" type="VARCHAR(255 ${char})" remarks="Name.">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="VC_PHONE" type="VARCHAR(255 ${char})" remarks="Phone.">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="VC_COMPANY" type="VARCHAR(255 ${char})" remarks="Company.">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="DATE_CREATION" type="DATETIME(6)" remarks="Date of creation this land.">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
