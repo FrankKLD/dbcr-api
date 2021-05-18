@@ -1,0 +1,10 @@
+target/
+.classpath
+.project
+.settings/
+build/
+bin/
+*.log
+.idea
+.vscode/
+*.iml
